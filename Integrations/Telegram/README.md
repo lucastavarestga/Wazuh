@@ -104,7 +104,15 @@ O script processará e enviará:
 * **Alertas Linux**: Logins SSH, falhas críticas e atividades de sistema.
 * **Personalização**: Títulos em Português-BR, ícones de identificação visual e sanitização automática de caracteres especiais para evitar falhas no Telegram.
 
-## 10. Informações de Versionamento
+## 10. Fontes usadas
+
+| Campo | Detalhes |
+| :--- | :--- |
+| **fonte1** | https://news.fmisec.com/10-integrating-wazuh-with-telegram-for-real-time-security-alerts |
+| **fonte2** | https://dev.to/0xdolan/wazuh-412-telegram-alert-integration-with-ssh-login-alerts-4mbd
+| **fonte3** | https://medium.com/@hasithaupekshitha97/wazuh-alerts-to-telegram-fb9d15b2e544
+
+## 11. Informações de Versionamento
 
 | Campo | Detalhes |
 | :--- | :--- |
