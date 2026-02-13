@@ -50,11 +50,11 @@ Adicione o bloco abaixo no arquivo /var/ossec/etc/ossec.conf para ativar a integ
 ```
 Explicação dos campos:
 
-name: Nome do script disparador.
-hook_url: Endpoint da API do Bot do Telegram.
-level: Envia todos os alertas de nível 12 ou superior.
-rule_id: Força o envio de regras específicas (AD e Segurança), independente do nível.
-alert_format: Define o envio dos dados em formato JSON para parsing detalhado.
+* **name**: Nome do script disparador.
+* **hook_url**: Endpoint da API do Bot do Telegram.
+* **level**: Envia todos os alertas de nível 12 ou superior.
+* **rule_id**: Força o envio de regras específicas (AD e Segurança), independente do nível.
+* **alert_format**: Define o envio dos dados em formato JSON para parsing detalhado.
 
 ## 6. Homologação e Testes (Manual)
 Antes de reiniciar o serviço, é recomendado realizar um teste manual para validar a conectividade e a formatação das mensagens.
