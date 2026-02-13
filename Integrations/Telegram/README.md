@@ -84,7 +84,9 @@ Execute o script manualmente passando o arquivo de teste e a URL do seu bot (sub
 ```bash
 /var/ossec/integrations/custom-telegram /tmp/test_alert.json "dummy" "https://api.telegram.org/bot<SUA_API_AQUI>/sendMessage"
 ```
-*NOTA: Verifique se chegou a mensagem no seu grupo do Telegram criado.
+*NOTA: Verifique se chegou a mensagem no seu grupo do Telegram criado, conforme imagem exemplo abaixo:
+
+<img width="402" height="442" alt="image" src="https://github.com/user-attachments/assets/9e953efb-3abd-4186-b968-f786461b0daa" />
 
 ## 7. Valide a sintaxe do Manager
 
@@ -109,8 +111,9 @@ O script processará e enviará:
 | Campo | Detalhes |
 | :--- | :--- |
 | **fonte1** | https://news.fmisec.com/10-integrating-wazuh-with-telegram-for-real-time-security-alerts |
-| **fonte2** | https://dev.to/0xdolan/wazuh-412-telegram-alert-integration-with-ssh-login-alerts-4mbd
-| **fonte3** | https://medium.com/@hasithaupekshitha97/wazuh-alerts-to-telegram-fb9d15b2e544
+| **fonte2** | https://github.com/0xdolan/wazuh-telegram-integration/blob/main/README.md |
+| **fonte3** | https://dev.to/0xdolan/wazuh-412-telegram-alert-integration-with-ssh-login-alerts-4mbd |
+| **fonte4** | https://medium.com/@hasithaupekshitha97/wazuh-alerts-to-telegram-fb9d15b2e544 |
 
 ## 11. Informações de Versionamento
 
