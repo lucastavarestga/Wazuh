@@ -56,32 +56,62 @@ level: Envia todos os alertas de nível 12 ou superior.
 rule_id: Força o envio de regras específicas (AD e Segurança), independente do nível.
 alert_format: Define o envio dos dados em formato JSON para parsing detalhado.
 
-## 6. Valide a sintaxe
+## 6. Homologação e Testes (Manual)
+Antes de reiniciar o serviço, é recomendado realizar um teste manual para validar a conectividade e a formatação das mensagens.
+
+#### A. Criar arquivo de alerta temporário
+Crie um arquivo JSON de teste em /tmp
 
 ```
+cat <<EOF > /tmp/test_alert.json
+{
+  "timestamp": "2026-02-13T15:00:00.000+0000",
+  "rule": { "level": 15, "description": "Teste SOC: Alteracao Critica AD", "id": "18219" },
+  "agent": { "id": "000", "name": "Wazuh-Server-Lab" },
+  "data": {
+    "win": {
+      "system": { "eventID": "4732", "computer": "LAB-SRV-01" },
+      "eventdata": { "subjectUserName": "lucas.tavares", "targetUserName": "Administradores", "memberName": "Usuario_Homologacao" }
+    }
+  }
+}
+EOF
+```
+
+#### B. Executar o teste via Bash
+Execute o script manualmente passando o arquivo de teste e a URL do seu bot (substitua <TOKEN>):
+
+```bash
+/var/ossec/integrations/custom-telegram /tmp/test_alert.json "dummy" "https://api.telegram.org/bot<SUA_API_AQUI>/sendMessage"
+```
+*NOTA: Verifique se chegou a mensagem no seu grupo do Telegram criado.
+
+## 7. Valide a sintaxe do Manager
+
+```bash
 /var/ossec/bin/wazuh-analysisd -t
 ```
 
-## 7. Se estiver tudo certo, reinicie o wazuh-manager
+## 8. Se estiver tudo certo, reinicie o wazuh-manager
 
-```
+```bash
 systemctl restart wazuh-manager
 ```
 
-## 8. Resumo da Versão
+## 9. Resumo da Versão
 O script processará e enviará:
 * **Alertas Críticos Windows/AD**: Criação/exclusão de usuários, alteração de grupos administradores, bloqueio de contas (lockout) e troca de senhas.
 * **Alertas Linux**: Logins SSH, falhas críticas e atividades de sistema.
-* **Personalização**: Títulos em Português-BR e ícones de identificação visual.
+* **Personalização**: Títulos em Português-BR, ícones de identificação visual e sanitização automática de caracteres especiais para evitar falhas no Telegram.
 
-## 9. Informações de Versionamento
+## 10. Informações de Versionamento
 
 | Campo | Detalhes |
 | :--- | :--- |
 | **Nome** | Lucas Tavares Soares |
 | **Email** | lucas@fkmais.com.br |
 | **Data** | 13/02/2026 |
-| **Versão** | 1.0.2 |
+| **Versão** | 1.0.4 |
 
 ### Qualquer dúvida, entre em contato.
 
