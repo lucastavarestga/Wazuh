@@ -19,7 +19,7 @@ mkdir -p /root/scripts /backup
 
 ## 3. Instalação do Script
 
-Crie o arquivo do script e insira o conteúdo técnico:
+Crie o arquivo do script e insira o conteúdo:
 
 ```bash
 nano /root/scripts/backup_wazuhserver.sh
