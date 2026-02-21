@@ -1,8 +1,6 @@
 # Backup Rsync Incremental - Wazuh Server
 
-Este script realiza o backup incremental e modular do Wazuh Server e do Sistema Operacional, utilizando hardlinks para otimizar o espaço em disco, garantindo a segregação total entre configurações e arquivos do sistema, além de gerenciar automaticamente a retenção dos dados (padrão 30 dias).
-
-Este script realiza o backup incremental e modular do Wazuh Server e do Sistema Operacional de forma agnóstica à distribuição Linux. A solução utiliza hardlinks para otimização de storage e garante a segregação total entre arquivos do SO e configurações do Wazuh, com gerenciamento automático de retenção, além de gerenciar automaticamente a retenção dos dados (padrão 30 dias).
+Este script realiza o backup incremental e modular do Wazuh Server e do Sistema Operacional de forma compativel a distribuições Linux suportadas oficialmente pelo Wazuh Server. A solução utiliza hardlinks para otimização de storage e garante a segregação total entre arquivos do SO e configurações do Wazuh, com gerenciamento automático de retenção, além de gerenciar automaticamente a retenção dos dados (padrão 30 dias).
 
 ## 1. Pré-requisitos
 O script depende de ferramentas padrão presentes nos repositórios oficiais das distros suportadas (Debian, Ubuntu, RHEL, CentOS, AlmaLinux, Rocky e Amazon Linux).
