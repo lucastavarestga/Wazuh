@@ -6,10 +6,16 @@ Este script realiza o backup incremental e modular do Wazuh Server e do Sistema 
 O script depende de ferramentas padrão presentes nos repositórios oficiais das distros suportadas (Debian, Ubuntu, RHEL, CentOS, AlmaLinux, Rocky e Amazon Linux).
 
 # Para distribuições baseadas em Debian/Ubuntu:
+
+```bash
 apt update && apt install -y rsync wget nano findutils coreutils hostname cron tree
+```
 
 # Para distribuições baseadas em RHEL/CentOS/AlmaLinux/Rocky/Amazon Linux:
+
+```bash
 dnf install -y rsync wget nano findutils coreutils hostname cronie tree
+```
 
 ## 2. Preparação do Ambiente
 Procedemos com a criação do diretório para os scripts e para o armazenamento dos backups:
@@ -68,11 +74,11 @@ Configuramos a execução automática via cron (execução às 01:00 e 12:20):
 ```bash
 crontab -e
 ```
-
 Adicione as linhas abaixo:
+Configuramos a execução automática (01:00 e 12:20):
 
 ```bash
-# Backup diário do Wazuh Server e SO (Padrão FK+)
+# Backup diário do Wazuh Server e SO
 00 01 * * * /usr/bin/env bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
 20 12 * * * /usr/bin/env bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
 ```
