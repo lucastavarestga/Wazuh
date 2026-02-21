@@ -164,11 +164,18 @@ Adicione as linhas abaixo:
 ## Informações de Versionamento
 
 | Campo | Detalhes |
-| --- | --- |
-| **Autor** | Lucas Tavares Soares |
-| **Email** | lucas@fkmais.com.br |
-| **Data** | 15/02/2026 |
-| **Versão** | 2.4 |
+| ---- | ---- |
+| **Autor**   | Lucas Tavares Soares |
+| **Email**   | lucas@fkmais.com.br |
+| **Data**    | 15/02/2026 |
+| **Versão**  | 2.4 |
+
+### Qualquer dúvida, entre em contato.
 
 <a href="mailto:lucastavarestga@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
-<a href="https://www.google.com/search?q=https://www.linkedin.com/in/lucastavarestga" target="_blank"><img src="https://www.google.com/search?q=https://img.shields.io/badge/-LinkedIn-0077B5%3Fstyle%3Dfor-the-badge%26logo%3Dlinkedin%26logoColor%3Dwhite" target="_blank"></a>
+<a href="https://www.linkedin.com/in/lucastavarestga" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://youtube.com/@lucastavaressoares" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
+
+Youtube MasterMindTI
+
+<a href="https://www.youtube.com/@mastermindti" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"></a>
