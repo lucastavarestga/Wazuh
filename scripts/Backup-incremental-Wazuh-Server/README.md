@@ -2,15 +2,18 @@
 
 Este script realiza o backup incremental e modular do Wazuh Server e do Sistema Operacional, utilizando hardlinks para otimizar o espaço em disco, garantindo a segregação total entre configurações e arquivos do sistema, além de gerenciar automaticamente a retenção dos dados (padrão 30 dias).
 
-## 1. Pré-requisitos (Debian/Ubuntu)
-Certifique-se de que os pacotes necessários estão instalados no seu Wazuh Manager:
+Este script realiza o backup incremental e modular do Wazuh Server e do Sistema Operacional de forma agnóstica à distribuição Linux. A solução utiliza hardlinks para otimização de storage e garante a segregação total entre arquivos do SO e configurações do Wazuh, com gerenciamento automático de retenção, além de gerenciar automaticamente a retenção dos dados (padrão 30 dias).
 
-```bash
-apt update && apt install -y rsync findutils coreutils bash
-```
+## 1. Pré-requisitos
+O script depende de ferramentas padrão presentes nos repositórios oficiais das distros suportadas (Debian, Ubuntu, RHEL, CentOS, AlmaLinux, Rocky e Amazon Linux).
+
+# Para distribuições baseadas em Debian/Ubuntu:
+apt update && apt install -y rsync wget nano findutils coreutils hostname cron tree
+
+# Para distribuições baseadas em RHEL/CentOS/AlmaLinux/Rocky/Amazon Linux:
+dnf install -y rsync wget nano findutils coreutils hostname cronie tree
 
 ## 2. Preparação do Ambiente
-
 Procedemos com a criação do diretório para os scripts e para o armazenamento dos backups:
 
 ```bash
@@ -38,16 +41,26 @@ Após customizações, vamos para a parte de ajuste de permissões e realizaçã
 
 ```bash
 chmod +x /root/scripts/backup_wazuhserver.sh
-bash -x /root/scripts/backup_wazuhserver.sh
+/usr/bin/env bash -x /root/scripts/backup_wazuhserver.sh
 ```
 
 ## 6. Validação dos Dados
 
 Procedemos com a verificação dos arquivos gravados e do tamanho total ocupado no storage:
 
+# Visualizar a estrutura de pastas criada (Níveis de diretório)
+```bash
+tree -L 3 /backup/bkp-server/
+```
+
+# Verificar tamanho total e eficiência do storage
+```bash
+du -shc /backup/bkp-server/*
+```
+
+# Listando arquivos gravados
 ```bash
 ls -lha /backup/bkp-server/
-du -shc /backup/bkp-server/*
 ```
 
 ## 7. Agendamento (Crontab)
@@ -62,8 +75,8 @@ Adicione as linhas abaixo:
 
 ```bash
 # Backup diário do Wazuh Server e SO (Padrão FK+)
-00 01 * * * /bin/bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
-20 12 * * * /bin/bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
+00 01 * * * /usr/bin/env bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
+20 12 * * * /usr/bin/env bash /root/scripts/backup_wazuhserver.sh >> /var/log/backup_wazuh.log 2>&1
 ```
 
 ---
@@ -82,8 +95,8 @@ Adicione as linhas abaixo:
 | ---- | ---- |
 | **Autor**   | Lucas Tavares Soares |
 | **Email**   | lucas@fkmais.com.br |
-| **Data**    | 15/02/2026 |
-| **Versão**  | 2.4 |
+| **Data**    | 21/02/2026 |
+| **Versão**  | 2.5 |
 
 ### Qualquer dúvida, entre em contato.
 
