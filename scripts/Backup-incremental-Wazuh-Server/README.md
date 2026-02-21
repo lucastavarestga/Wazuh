@@ -81,15 +81,18 @@ Adicione as linhas abaixo:
 
 ## Diferenciais desta Implementação
 
-* **Economia de Espaço**: Utiliza hardlinks para arquivos inalterados entre backups.
-* **Segregação**: Pastas distintas para SO e configurações específicas do Wazuh.
-* **Retenção Inteligente**: Limpeza automática de arquivos com mais de 30 dias.
-* **Logging**: Acompanhamento detalhado do status de cada execução.
+* **Economia de Espaço**: Utiliza hardlinks via Rsync para evitar redundância de arquivos inalterados, otimizando o storage.
+* **Segregação**: Organiza de forma modular as pastas do Sistema Operacional e as configurações da Wazuh (Manager, Indexer, Dashboard).
+* **Retenção Automática**: Gestão nativa do ciclo de vida dos dados com expurgo automático de backups superiores a 30 dias.
+* **Auditoria**: Geração de logs detalhados para acompanhamento de status e integridade de cada execução.
+* **Arquitetura Agnóstica**: Compatibilidade total com a matriz oficial de SOs do Wazuh (Debian, Ubuntu, RHEL, AlmaLinux, Rocky e Amazon Linux).
+* **Visibilidade Estrutural**: Uso do utilitário tree para conferência rápida e visual da hierarquia de diretórios e integridade dos dados.
+
 ---
 
 ## Informações de Versionamento
 
-| Campo | Detalhes |
+|Campo |Detalhes |
 | ---- | ---- |
 | **Autor**   | Lucas Tavares Soares |
 | **Email**   | lucas@fkmais.com.br |
