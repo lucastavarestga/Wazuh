@@ -26,16 +26,22 @@ cd /root/scripts
 wget https://raw.githubusercontent.com/lucastavarestga/Wazuh/refs/heads/main/scripts/Backup-incremental-Wazuh-Server/backup_wazuhserver.sh
 ```
 
-## 4. Permissões e Primeiro Teste
+## 4. Edite o script para fazer as modificações necessárias de local do salvamento, o que será feito backup, e tempo de retenção, para isso utilize o nano ou vim
 
-Ajustamos as permissões e realizamos o primeiro teste manual para validar a gravação dos dados:
+```bash
+nano /root/scripts/backup_wazuhserver.sh
+```
+
+## 5. Permissões e Primeiro Teste
+
+Após customizações, vamos para a parte de ajuste de permissões e realização do primeiro teste manual para validar a gravação dos dados:
 
 ```bash
 chmod +x /root/scripts/backup_wazuhserver.sh
 bash -x /root/scripts/backup_wazuhserver.sh
 ```
 
-## 5. Validação dos Dados
+## 6. Validação dos Dados
 
 Procedemos com a verificação dos arquivos gravados e do tamanho total ocupado no storage:
 
@@ -44,7 +50,7 @@ ls -lha /backup/bkp-server/
 du -shc /backup/bkp-server/*
 ```
 
-## 6. Agendamento (Crontab)
+## 7. Agendamento (Crontab)
 
 Configuramos a execução automática via cron (execução às 01:00 e 12:20):
 
