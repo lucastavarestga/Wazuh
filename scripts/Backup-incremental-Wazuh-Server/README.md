@@ -54,7 +54,7 @@ Procedemos com a verificação dos arquivos gravados e do tamanho total ocupado 
 
 # Visualizar a estrutura de pastas criada (Níveis de diretório)
 ```bash
-tree -L 3 /backup/bkp-server/
+tree -L 4 /backup/bkp-server/
 ```
 
 # Verificar tamanho total e eficiência do storage
